@@ -9,6 +9,10 @@ app.use(cors());
 
 const endpoints = require("./routes/endpoints");
 
+app.get("/cron", (req, res) => {
+  res.json({ msg: "cron called" });
+});
+
 app.use("/api", endpoints);
 
 app.listen(process.env.PORT, () => {
